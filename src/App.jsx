@@ -1,42 +1,26 @@
-import Contador from "./componentes/Contador";
+import ContadorConHooks from "./componentes/ContadorConHooks";
+import Publicaciones from "./componentes/Publicaciones";
+import FormularioContacto from "./componentes/FormularioContacto";
+import FormularioCompleto from "./componentes/FormularioCompleto";
 
-
-const barcazas = [
-  { id: 'BG-01', nombre: 'Guaraní', litros: 48500 },
-  { id: 'BP-02', nombre: 'Paraná',  litros: 32000 },
-  { id: 'BY-03', nombre: 'Yguazú',  litros: 51200 },
-
-
-];
-
-
-function Precio({ nombre, litros, estado = 'en puerto' }) {
-  return (
-    <div>
-      <h3>{nombre}</h3>
-    
-    </div>
-  );
-}
 
 export default function App() {
   return (
-    <div> 
-      
-        <Contador />
-        <div>
+    <div>
+      <h1>Mostrar componentes</h1>
+
+    {/*  <ContadorConHooks /> 
+      <Publicaciones />*/}
+
+    <div style={{ marginTop: "20px", 
+      backgroundColor: "#f0f0f0", 
+      padding: "10px" }}>
+        <h3>Formulario de contacto</h3>
         
-          {
-          barcazas.map(
-            (data) => (
-            <Precio key={data.id} nombre={data.nombre} litros={data.litros} />
-          )
-        )
-          }
-        </div>
-    
+      <FormularioContacto />
+
+      <FormularioCompleto />
     </div>
-    
-    
+  </div>
   );
 }

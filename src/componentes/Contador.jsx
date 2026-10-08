@@ -1,24 +1,21 @@
-import { useState } from 'react';
+import { useState } from "react";
+
 
 export default function Contador() {
-  const [activas, setActivas] = useState(3);
-  //     ↑ valor    ↑ función    ↑ valor inicial
-  //       actual     para cambiarlo
+  const [estado, setEstado] = useState(0);
 
 
-  function sumar() {
-    setActivas(activas + 1);
-  }
-
-  function restar() {
-    setActivas(activas - 1);
-  }
 
   return (
     <div>
-      <p>{activas} barcazas activas</p>
-      <button onClick={sumar}>sumar</button>
-      <button onClick={restar}>restar</button>
+      <p>{estado}</p>
+      <button onClick={() => setEstado(estado + 1)}>sumar</button>
+      <button onClick={() => setEstado(estado - 1)}>restar</button>
+
+      <button onClick={() => setEstado(0)}>reset</button>
+
+<br></br>
+     en realidad hay  {estado} barcazas activas
     </div>
   );
 }
