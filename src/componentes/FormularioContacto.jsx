@@ -9,6 +9,9 @@ function FormularioContacto() {
   const manejarEnvio = (e) => {
     e.preventDefault();
     console.log('Nombre:', nombre, 'Mensaje:', mensaje, 'Email:', email);
+    setNombre('');
+    setMensaje('');
+    setEmail('');
   };
 
   return (
